@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rplot",
+            "command": "sh",
+            "args": [
+                "-c",
+                "\"cat ${file} |  R --interactive --no-save\""
+            ],
+            "type": "shell"
+        }
+    ]
+}
