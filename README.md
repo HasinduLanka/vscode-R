@@ -20,12 +20,12 @@
   - `R` by Yuki Ueda
   - `R Debugger` by R Debugger
 
-- Launch VS Code Quick Open (Ctrl+P), enter following commands :
+  - Launch VS Code Quick Open (Ctrl+P), enter following commands :
 
-  ```sh
-  ext install Ikuyadeu.r
-  ext install RDebugger.r-debugger
-  ```
+    ```sh
+    ext install Ikuyadeu.r
+    ext install RDebugger.r-debugger
+    ```
 
 - R console, `radian` :
 
@@ -152,3 +152,34 @@
         cat $1 |  R --interactive --no-save
     ```
 - Run and plot R files with command `sh run my-r-script.r`
+
+## Setup R for visual studio code jupyter notebooks
+
+After setting up R and radian, you can use the following commands to setup R for jupyter notebooks.
+
+- R console, `radian` :
+
+  ```r
+  install.packages('IRkernel')
+  IRkernel::installspec()  # to register the kernel in the current R installation
+
+  IRkernel::installspec(name = 'ir33', displayname = 'R 3.3') # Or your R version
+  ```
+
+- Install Visual Studio Code Extensions :
+
+  - `Jupyter` by Microsoft
+  - `Jupyter Notebook Renderer` by Microsoft
+  - `Jupyter Keymap` by Microsoft
+
+  - Launch VS Code Quick Open (Ctrl+P), enter following commands :
+
+    ```sh
+    ext install ms-toolsai.jupyter
+    ext install ms-toolsai.jupyter-renderers
+    ext install ms-toolsai.jupyter-keymap
+    ```
+
+  - To create a new notebook open the command palette (Windows: Ctrl + Shift + P, macOS: Command + Shift + P) and select the command "Jupyter: Create New Jupyter Notebook"
+
+  - Select `R` kernel by clicking on the kernel picker in the top right of the notebook or by invoking the "Notebook: Select Notebook Kernel" command.
